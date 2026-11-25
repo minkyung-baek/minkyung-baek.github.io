@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>백민경 · 지속가능성·CSR 기획</title>
+<link rel="canonical" href="https://minkyung-baek.github.io/">
+<meta name="description" content="백민경 포트폴리오 — 지속가능성 전략, CSR 프로그램 기획, 이해관계자 협력, 임팩트 측정">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+/* VOICE: 차분하고 단정한 이력 포트폴리오 — 사실과 숫자가 말하게
+   IDEA: 참고 페이지와 같은 구조(요약 → 타임라인 → 카드 → 대표 프로젝트 → 펼침 목록 → 표)
+   PICTURE: 본인 결과물(AR3T 프레임워크·Ramboll 보고서) 겹친 이미지
+   COLOUR and TYPE: 세이지그린 한 가지 계열, Pretendard/Noto Sans KR
+   LAYOUT: 최대 1040px 한 칼럼, 600px 이하에서 세로로 쌓임 */
+:root{color-scheme:light dark;
+--bg:light-dark(#fbfcf9,#121713);--ink:light-dark(#1d2820,#e6ece5);--muted:light-dark(#5d6a60,#9eab9f);
+--soft:light-dark(#eef3ec,#1b231d);--line:light-dark(#dde5da,#2a342c);--card:light-dark(#ffffff,#18201a);
+--accent:light-dark(#587a5c,#a6c4a2);--accent-strong:light-dark(#3f5e45,#c6dbc2);--accent-soft:light-dark(#dce8d8,#26362a);
+--bar:light-dark(#cfdecb,#33473a);--on-accent:light-dark(#ffffff,#132015)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Pretendard,"Noto Sans KR",system-ui,-apple-system,sans-serif;overflow-x:clip;word-break:keep-all}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 max(4vw,16px)}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:12px;height:56px}
+.brand{font-weight:800;color:var(--ink);text-decoration:none;margin-right:auto}
+nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+nav a{flex:none;color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;padding:7px 11px;border-radius:999px}
+nav a:hover,nav a.on{background:var(--accent-soft);color:var(--accent-strong)}
+.tbtn{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:16px}
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:clamp(26px,3.4vw,34px);line-height:1.25;margin:0 0 6px}
+h2::before{content:"";display:block;width:32px;height:3px;background:var(--accent);margin-bottom:14px}
+h2 small{font-size:15px;font-weight:400;color:var(--muted);margin-left:12px;display:inline-block}
+h3{font-size:20px;line-height:1.35;margin:0 0 6px}
+.meta{color:var(--muted);font-size:14px;margin:0 0 14px}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:center;padding:88px 0 56px;border:0}
+.who{font-weight:800;font-size:18px;margin:0}.role{color:var(--muted);font-size:14px;margin:2px 0 26px}
+.hero h1{font-size:clamp(24px,2.9vw,31px);line-height:1.38;margin:0 0 22px;letter-spacing:-.01em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.ask{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px}
+.ask span{font-size:14px;color:var(--muted)}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 15px;font:600 14px/1 inherit;cursor:pointer;min-height:40px}
+.chip[aria-pressed=true]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.hint{min-height:24px;font-size:14px;color:var(--accent-strong);margin:0 0 14px}
+.sum{background:var(--soft);border-radius:14px;padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin-bottom:22px}
+.sum b{color:var(--accent);font-size:14px;padding-top:2px}
+.sum ul{margin:0;padding:0;list-style:none}.sum li{font-size:15px;padding:2px 0}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 18px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;background:var(--accent-soft);color:var(--accent-strong)}
+.btn.main{background:var(--accent);color:var(--on-accent)}
+.stackimg{position:relative;aspect-ratio:1/1;max-width:440px;justify-self:end;width:100%}
+.stackimg img{position:absolute;border-radius:12px;box-shadow:0 18px 40px rgba(30,50,35,.18);border:1px solid var(--line);background:#fff}
+.stackimg .back{width:66%;top:0;right:0}
+.stackimg .front{width:86%;left:0;bottom:12%;transform:rotate(-2deg)}
+.cap{font-size:13px;color:var(--muted);margin-top:10px;max-width:440px;justify-self:end}
+/* timeline */
+.tl{padding:24px 0 64px}
+.tl-grid{display:grid;grid-template-columns:150px 1fr;row-gap:12px;align-items:center}
+.tl-years{position:relative;height:22px;font-size:12px;color:var(--muted)}
+.tl-years span{position:absolute;transform:translateX(-50%)}
+.tl-name{font-weight:700;font-size:14px;line-height:1.25}.tl-name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.tl-track{position:relative;height:22px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px calc(100%/15))}
+.tl-bar{position:absolute;top:3px;height:16px;border-radius:5px;background:var(--bar)}
+.tl-bar.strong{background:var(--accent)}
+.tl-bar i{position:absolute;inset:0;font-size:11px;font-style:normal;color:var(--on-accent);padding-left:8px;line-height:16px;white-space:nowrap;overflow:hidden}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:26px}
+.card{display:block;background:var(--soft);border-radius:14px;padding:20px 22px;text-decoration:none;color:var(--ink);transition:transform .15s}
+.card:hover{transform:translateY(-2px)}
+.card small{color:var(--accent);font-weight:700;font-size:13px}
+.card h3{font-size:18px;margin:4px 0}.card p{margin:0;color:var(--muted);font-size:14.5px}
+/* featured */
+.feat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:40px;margin-top:40px;padding-top:40px;border-top:1px solid var(--line)}
+.feat:first-of-type{border-top:0;padding-top:0}
+.vis{background:var(--soft);border-radius:16px;padding:20px;align-self:start}
+.vis img{width:100%;border-radius:10px;display:block;border:1px solid var(--line)}
+.vis figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+.dots{margin:0 0 16px;padding-left:18px}.dots li{margin:6px 0}.dots li::marker{color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-size:13px;color:var(--muted);font-weight:500;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700;white-space:nowrap}
+.note{font-size:13.5px;color:var(--muted);margin-top:12px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kpi b{display:block;font-size:clamp(20px,2.4vw,26px);color:var(--accent-strong);line-height:1.2;white-space:nowrap}.kpi span{font-size:12.5px;color:var(--muted)}
+/* collective impact diagram */
+.ci{position:relative;aspect-ratio:1/1;max-width:380px;margin:0 auto}
+.ci .hub{position:absolute;inset:34%;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;text-align:center;font-size:13px;font-weight:700;line-height:1.35;padding:8px}
+.ci .node{position:absolute;width:30%;aspect-ratio:1/1;border-radius:50%;background:var(--card);border:1.5px solid var(--accent);display:grid;place-items:center;text-align:center;font-size:12.5px;line-height:1.3;padding:6px;transform:translate(-50%,-50%)}
+.ci .node b{display:block;font-size:13.5px;color:var(--accent-strong)}
+.ci svg{position:absolute;inset:0;width:100%;height:100%}
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:30px 1fr;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;counter-increment:s}
+.steps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:800;font-size:13px}
+.steps b{display:block;font-size:15px}.steps span{font-size:13.5px;color:var(--muted)}
+/* accordion */
+.acc-top{display:flex;justify-content:flex-end;margin:18px 0 8px}
+.acc-top button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 14px;font:600 14px inherit;cursor:pointer;min-height:40px}
+details{border-top:1px solid var(--line)}details:last-of-type{border-bottom:1px solid var(--line)}
+summary{display:grid;grid-template-columns:36px 1fr auto 20px;gap:12px;align-items:center;padding:16px 0;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary .n{color:var(--muted);font-size:14px}summary .t{font-weight:700}
+summary .org{font-size:13px;color:var(--muted);white-space:nowrap}
+summary .tag{font-size:12px;background:var(--accent-soft);color:var(--accent-strong);padding:2px 8px;border-radius:6px;margin-left:6px}
+summary::after{content:"⌄";color:var(--muted);font-size:18px;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(180deg)}
+.acc-body{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;padding:0 0 26px 48px}
+.acc-body h4{font-size:14px;color:var(--accent);margin:12px 0 4px}.acc-body h4:first-child{margin-top:0}
+.acc-body ul{margin:0;padding-left:18px}.acc-body li{margin:4px 0;font-size:15px}
+.acc-body img{width:100%;border-radius:10px;border:1px solid var(--line)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px;margin-top:26px;position:relative}
+.flow li{list-style:none;background:var(--soft);border-radius:14px;padding:18px;position:relative}
+.flow li+li::before{content:"›";position:absolute;left:-17px;top:16px;font-size:24px;color:var(--muted)}
+.flow li:last-child{background:var(--accent);color:var(--on-accent)}
+.flow li:last-child p,.flow li:last-child small{color:inherit;opacity:.9}
+.flow h3{font-size:16px;margin:0 0 6px}.flow p{margin:0;font-size:14px;color:var(--muted)}.flow small{display:block;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.loop{text-align:right;font-weight:700;color:var(--accent);font-size:14px;margin-top:12px}
+.quote{margin:28px 0 0;padding:18px 22px;border-left:3px solid var(--accent);background:var(--soft);border-radius:0 12px 12px 0;font-size:16px}
+dl.skills{display:grid;grid-template-columns:170px 1fr;gap:12px 24px;margin:22px 0 0}
+dl.skills dt{font-weight:700;font-size:15px}dl.skills dd{margin:0;font-size:15px}
+.contact{display:flex;flex-wrap:wrap;gap:12px 26px;font-weight:700;font-size:17px;margin-top:18px}
+.contact a{text-decoration:none}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13px;color:var(--muted)}
+@media(max-width:860px){.hero,.feat,.acc-body{grid-template-columns:1fr}.stackimg,.cap{justify-self:start}.flow{grid-template-columns:1fr 1fr}.flow li+li::before{display:none}.acc-body{padding-left:0}}
+@media(max-width:600px){h2 small{display:block;margin:4px 0 0}.brand{margin-right:8px}section{padding:52px 0}.hero{padding:48px 0 32px;gap:28px}.cards{grid-template-columns:1fr}.flow{grid-template-columns:1fr}
+.tl-grid{grid-template-columns:96px 1fr}.tl-years span:nth-child(even){display:none}.tl-bar i{display:none}
+summary{grid-template-columns:28px 1fr 18px}summary .org{display:none}
+dl.skills{grid-template-columns:1fr;gap:2px}dl.skills dd{margin-bottom:12px}
+table{font-size:13.5px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:6.5em;white-space:normal}.stack td::before{content:attr(data-l);float:inline-start;width:6em;margin-inline-start:-6.5em;color:var(--muted);font-weight:500}
+.kpis{grid-template-columns:1fr 1fr 1fr}.kpi{padding:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+</style>
+</head>
+<body id="top">
+<header><div class="wrap">
+  <a class="brand" href="#top">백민경</a>
+  <nav aria-label="섹션">
+    <a href="#impact">임팩트를 만든 일</a><a href="#featured">대표 프로젝트</a><a href="#projects">현업 프로젝트</a><a href="#method">일하는 방식</a><a href="#fit">역할 적합성</a><a href="#skills">역량·경력</a>
+  </nav>
+  <button class="tbtn" id="theme" type="button" aria-label="밝은/어두운 테마 전환">◐</button>
+</div></header>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <p class="who">백민경</p>
+    <p class="role">Sustainability · CSR · Stakeholder Engagement</p>
+    <h1>9년간 기업·재단·글로벌 조직에서 임팩트 프로그램을 만들고 운영.<br>지금은 <em>지속가능성 목표를 현장의 의사결정으로 옮기는 일</em>로 넓히는 중.</h1>
+    <div class="ask" role="group" aria-label="어떤 분이세요?">
+      <span>어떤 분이세요?</span>
+      <button class="chip" type="button" data-k="hr" aria-pressed="false">채용 담당자</button>
+      <button class="chip" type="button" data-k="net" aria-pressed="false">동문·네트워킹</button>
+      <button class="chip" type="button" data-k="look" aria-pressed="false">그냥 구경</button>
+    </div>
+    <p class="hint" id="hint" aria-live="polite"></p>
+    <div class="sum"><b>요약</b><ul>
+      <li>KAIST MBA 마지막 학기, 2027.2 졸업 예정 (지속가능성·전략·데이터 분석)</li>
+      <li>2026 봄 USC Marshall 교환, Ramboll 물 스튜어드십 프로젝트 팀 리드 (5팀 중 1위)</li>
+      <li>아산나눔재단 사회혁신팀 팀장·PM (2016.2~2022.3), 신규 사업 2종 직접 발의</li>
+      <li>ESG평가전문가 · ADsP · IELTS 8.0 · 대표 프로젝트 <a href="#featured">바로 가기 ↓</a></li>
+    </ul></div>
+    <div class="btns">
+      <a class="btn main" href="mailto:thisismbaek@gmail.com">이메일 보내기</a>
+      <a class="btn" href="https://www.linkedin.com/in/minkyungbaek-" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div>
+    <div class="stackimg">
+      <img class="back" src="assets/ramboll-summary-top.jpg" alt="Ramboll 물 스튜어드십 최종 보고서 요약 페이지">
+      <img class="front" src="assets/ar3t-framework.jpg" alt="물 스튜어드십 성숙도를 진단하는 AR3T 신호등 프레임워크">
+    </div>
+    <p class="cap">앞: 팀이 만든 AR3T 신호등 진단 프레임워크 · 뒤: Ramboll Water 최종 보고서 요약</p>
+  </div>
+</section>
+
+<div class="tl" aria-label="경력 타임라인">
+  <div class="tl-grid" id="tl"></div>
+</div>
+
+<section id="impact">
+  <h2>임팩트를 만든 일 <small>제안해서 시작하고, 숫자로 증명한 것</small></h2>
+  <div class="cards">
+    <a class="card" href="#f-ramboll"><small>물 스튜어드십 · 팀 리드</small><h3>Ramboll 물 리스크 진단 프레임워크</h3><p>IKEA·LEGO·ASML 사례로 시설 효율을 넘어 유역 단위 스튜어드십 경로 제시. 5팀 중 1위</p></a>
+    <a class="card" href="#f-tbf"><small>사업 전환 · 파트너십</small><h3>공익 미디어에서 ESG 파트너로</h3><p>비전·사업계획 재정립, 기업 제안 3건과 5자 협력 모델 설계. 5개월간 약 2억 원 수주에 기여</p></a>
+    <a class="card" href="#f-asan"><small>신규 사업 발의</small><h3>현장 인터뷰에서 이사회 승인까지</h3><p>직접 발의한 프로그램 2종이 파일럿 후 이사회 만장일치 승인, 예산 2배로 정규 사업화</p></a>
+    <a class="card" href="#p-ms"><small>성과관리 · KPI</small><h3>파트너 8곳의 KPI 언어 통일</h3><p>Microsoft 필란트로피 파트너 성과 체계 표준화. 학습자 5,500명, KPI 목표 대비 120%</p></a>
+    <a class="card" href="#p-academy"><small>리더 육성 · 생태계</small><h3>사회 분야 리더 297명 네트워크</h3><p>370시간 미니 MBA 4개 기수 운영, 225개 조직 리더 네트워크 구축</p></a>
+    <a class="card" href="#p-report"><small>임팩트 측정 · 스토리텔링</small><h3>재단 첫 임팩트 리포트와 연구</h3><p>10년 성과를 데이터와 이야기로 정리. 공동 연구 보고서 10개월간 5,542회 다운로드</p></a>
+  </div>
+</section>
+
+<section id="featured">
+  <h2>대표 프로젝트 <small>지속가능성 전략 · 파트너십 · 신규 사업</small></h2>
+
+  <article class="feat" id="f-ramboll">
+    <figure class="vis" style="margin:0">
+      <img src="assets/ramboll-summary.jpg" alt="Ramboll 프로젝트 최종 보고서의 Executive Summary 페이지">
+      <figcaption>최종 보고서 Executive Summary — REWOW 가치 경로와 AI 물 인텔리전스 개념</figcaption>
+    </figure>
+    <div>
+      <h3>물 리스크는 데이터가 아니라 결정의 공백 — Ramboll 물 스튜어드십 전략</h3>
+      <p class="meta">USC Marshall MBA 클라이언트 프로젝트 · Ramboll Water(덴마크) · 6인 다국적 팀 · 2026.1~5 · 팀 리드</p>
+      <ul class="dots">
+        <li>질문: CSRD·EU 택소노미·AWS 기준이 높아지는 상황에서 제조 기업이 시설 효율을 넘어 유역 단위 스튜어드십으로 가는 방법</li>
+        <li>IKEA(공급망 규모), LEGO(운영 효율), ASML(물 의존도가 높은 핵심 공정) 세 기업의 가치사슬 물 리스크 분석</li>
+        <li>SBTN AR3T 기반 신호등 성숙도 진단 도구, REWOW 가치 경로, AI 물 인텔리전스 대시보드 개념 설계</li>
+        <li>L'Oréal Dry Factory(현 Waterloop) 모델을 '효율 이후' 단계의 벤치마크로 활용</li>
+      </ul>
+      <div class="kpis"><div class="kpi"><b>1위</b><span>5개 팀 중 (클라이언트·수업 평가)</span></div><div class="kpi"><b>3곳</b><span>글로벌 제조사 분석</span></div><div class="kpi"><b>6명</b><span>다국적·다세대 팀</span></div></div>
+      <table class="stack"><thead><tr><th>본인 담당</th><th>내용</th></tr></thead><tbody>
+        <tr><td>팀 리드</td><td>업무 분담, 일정, 클라이언트 커뮤니케이션 전담</td></tr>
+        <tr><td>진단 설계</td><td>성숙도부터 진단한 뒤 처방하는 구조 — 같은 틀로 세 기업의 다른 프로필을 읽어냄</td></tr>
+        <tr><td>보고·발표</td><td>최종 보고서 작성 총괄, Ramboll Water에 권고안 발표</td></tr>
+      </tbody></table>
+      <p class="note">배운 점: 환경 리스크는 사업장과 맥락마다 다르고, 성과는 복잡한 데이터를 운영·투자 우선순위로 번역할 때 생긴다.</p>
+    </div>
+  </article>
+
+  <article class="feat" id="f-tbf">
+    <figure class="vis" style="margin:0">
+      <div class="ci" aria-label="하나의 의제를 다섯 파트너가 나눠 맡는 협력 모델">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><g stroke="currentColor" stroke-width=".4" opacity=".35" fill="none" style="color:var(--accent)"><circle cx="50" cy="50" r="36"/></g></svg>
+        <div class="hub">의제<br>돌봄 사각지대</div>
+        <div class="node" style="left:50%;top:14%"><div><b>연구</b>현장 조사</div></div>
+        <div class="node" style="left:84%;top:39%"><div><b>기업</b>의제 후원</div></div>
+        <div class="node" style="left:71%;top:80%"><div><b>미디어</b>기획 보도</div></div>
+        <div class="node" style="left:29%;top:80%"><div><b>정책</b>제언·포럼</div></div>
+        <div class="node" style="left:16%;top:39%"><div><b>NGO</b>현장 데이터</div></div>
+      </div>
+      <figcaption>직접 설계한 5자 협력 모델 — 이주배경 청소년·영케어러 등 돌봄 사각지대를 두 개 트랙으로 운영</figcaption>
+    </figure>
+    <div>
+      <h3>공익 미디어에서 지속가능성 파트너로, 5개월의 사업 전환</h3>
+      <p class="meta">더나은미래 (조선미디어그룹) · 사업전략팀 팀장 · 2024.10~2025.2</p>
+      <ul class="dots">
+        <li>창간 15주년을 앞두고 정체성 재정의와 중기 수익 모델 설계라는 과제</li>
+        <li>CSR·ESG 흐름을 바탕으로 비전·미션·가치·사업 원칙 재정립, 국·영문 회사 소개서와 2025 사업계획 재작성</li>
+        <li>제안 논리부터 예산·계약 조건까지 사업 개발 전 과정 리드</li>
+        <li>하나의 의제를 연구·기업·미디어·정책·NGO가 나눠 맡는 집합적 임팩트(collective impact) 모델 설계</li>
+      </ul>
+      <div class="kpis"><div class="kpi"><b>약 2억 원</b><span>기여한 수주 규모</span></div><div class="kpi"><b>3건</b><span>기업 제안</span></div><div class="kpi"><b>2개</b><span>신규 의제 이니셔티브</span></div></div>
+      <table class="stack"><thead><tr><th>제안</th><th>내용</th></tr></thead><tbody>
+        <tr><td>글로벌 제약사</td><td>창립 100주년 — 창업주의 나눔·교육·책임경영 유산을 ESG 전략과 잇는 아카데미 (채택)</td></tr>
+        <tr><td>기업 재단</td><td>3개 트랙 파트너십 제안 중 글로벌 필란트로피 콘텐츠 시리즈 채택</td></tr>
+        <tr><td>의제 후원</td><td>돌봄 사각지대 5개 정의, 데이터로 2개 트랙 우선순위화. 운영위원회와 4개월 주기(라운드테이블·기사·정책 포럼·결산) 설계</td></tr>
+      </tbody></table>
+      <p class="note">이 밖에 경상북도 대상 RE100 연계 지역 전환 이니셔티브를 기획·제안.</p>
+    </div>
+  </article>
+
+  <article class="feat" id="f-asan">
+    <figure class="vis" style="margin:0">
+      <ol class="steps">
+        <li><div><b>듣기</b><span>창업가·전문가 인터뷰에서 지원 공백 발견</span></div></li>
+        <li><div><b>제안</b><span>5개 컨셉 중 2개를 이사회에 올려 모두 예산 확보</span></div></li>
+        <li><div><b>설계</b><span>KPI·선발 기준·파트너 확정, 담당 인력 채용·교육</span></div></li>
+        <li><div><b>파일럿</b><span>공개 모집 후 참여자 피드백으로 개선</span></div></li>
+        <li><div><b>확산</b><span>이사회 만장일치 승인, 사업 규모 2배</span></div></li>
+      </ol>
+      <figcaption>지시받은 과제가 아니라 직접 발의한 신규 사업의 진행 순서</figcaption>
+    </figure>
+    <div>
+      <h3>현장 인터뷰 한 번에서 이사회 승인 대표 사업까지</h3>
+      <p class="meta">아산나눔재단 사회혁신팀 · 2021 · 본인 발의</p>
+      <ul class="dots">
+        <li>창업가·비영리 리더 인터뷰를 프로그램 설계, KPI, 파트너 선정으로 번역</li>
+        <li>파일럿 결과로 이사진을 설득해 정규 사업화 — 이후 재단의 대표 프로그램으로 자리 잡음</li>
+      </ul>
+      <table class="stack"><thead><tr><th>프로그램</th><th>내용</th><th>성과</th></tr></thead><tbody>
+        <tr><td>비영리 스타트업 성장 지원</td><td>초기 비영리 3곳 액셀러레이팅. 모두 모금·인지도·인프라 성장</td><td>NPS 100 · 만족도 9.5/10</td></tr>
+        <tr><td>창업가 리더십 코칭</td><td>3개월 1:1 코칭, 2일 워크숍, 동료 세션. 창업지원센터 MARU360과 협력</td><td>NPS 100 · 스타트업 CEO 12명</td></tr>
+      </tbody></table>
+      <p class="note">7인 교수 운영위원회·동문 자문위원회·이사회와 함께 우선순위를 정하고 예산·파트너십·거버넌스를 관리.</p>
+    </div>
+  </article>
+</section>
+
+<section id="projects">
+  <h2>현업 프로젝트 <small>제목을 누르면 펼쳐집니다</small></h2>
+  <div class="acc-top"><button type="button" id="all">모두 펼치기</button></div>
+
+  <details id="p-ms"><summary><span class="n">01</span><span class="t">파트너 8곳, 하나의 KPI 언어</span><span class="org">Microsoft Korea<span class="tag">성과관리</span></span></summary>
+    <div class="acc-body"><div>
+      <p class="meta">필란트로피 PM · 2024.2~6 · Adecco Korea 파견 계약</p>
+      <h4>배경</h4><ul><li>비영리·공공 파트너 8곳이 AI 역량, 디지털 포용, 사이버보안 교육을 운영 — 파트너마다 성과 기준이 달라 본사 계획에 쓰기 어려움</li></ul>
+      <h4>한 일</h4><ul><li>청소년·여성·구직자·비영리 실무자 대상 성과 관리, 본사 계획용 KPI·보고 체계 표준화</li><li>부진한 프로그램은 점수만 매기지 않고 파트너와 함께 원인 검토·개선</li><li>사업 사례를 글로벌 보도자료·영상으로 — Microsoft Asia Source, Korea News Center 게재</li></ul>
+      <h4>결과</h4><ul><li>학습자 5,500명, 연간 KPI 목표 대비 120%, 글로벌 임팩트 스토리 4건</li></ul>
+    </div><img src="assets/ai-changemakers.jpg" alt="AI for Changemakers 프로그램 표지" loading="lazy"></div>
+  </details>
+
+  <details id="p-academy"><summary><span class="n">02</span><span class="t">사회 분야 전체의 인재팀 역할 — 아산 프런티어 아카데미</span><span class="org">아산나눔재단<span class="tag">리더 육성</span></span></summary>
+    <div class="acc-body"><div>
+      <p class="meta">2016~2021 · 프로그램 리드(2016~19), 동문 프로그램(2020), 팀장(2021)</p>
+      <h4>한 일</h4><ul><li>비영리·사회적경제 차세대 리더 대상 7개월·370시간 미니 MBA, 30명씩 4개 기수 모집·선발·수료 운영</li><li>팀 프로젝트 20개와 해외 연수 관리, 신규 강사진 개발</li><li>비영리 CEO 12명 대상 5일 성찰 프로그램 분리 신설 (NPS 100)</li><li>2020 동문 컨퍼런스 N_FORUM 전면 온라인 전환, 1,094명 참석</li></ul>
+      <h4>결과</h4><ul><li>기수마다 만족도 4.7/5 이상, NPS 90+ · 평균 경쟁률 5:1 · 225개 조직 297명 동문</li></ul>
+    </div><img src="assets/frontier-academy.jpg" alt="2018 아산 프런티어 리더십 단체 사진" loading="lazy"></div>
+  </details>
+
+  <details id="p-report"><summary><span class="n">03</span><span class="t">10년의 일을 근거와 이야기로 — 연구와 첫 임팩트 리포트</span><span class="org">아산나눔재단<span class="tag">임팩트 측정</span></span></summary>
+    <div class="acc-body"><div>
+      <p class="meta">2020~2021</p>
+      <h4>집합적 임팩트 연구</h4><ul><li>"사회혁신가는 누구이고 무엇이 필요한가" — 임팩트리서치랩, 진저티프로젝트와 3자 공동 연구</li><li>3자 팀의 중심 역할로 데이터와 설문·인터뷰 결합, 사회혁신가 여정 3단계·9국면 프레임워크 도출 후 공개</li></ul>
+      <h4>10주년 임팩트 리포트</h4><ul><li>재단 최초 임팩트 리포트와 10주년 컨퍼런스 TF 리드</li><li>사회혁신팀 10년 성과를 데이터와 스토리로 구조화해 미디어·VIP·파트너에 발표</li></ul>
+      <h4>결과</h4><ul><li>연구 보고서 10개월간 5,542회 다운로드 · 재단 역사상 첫 임팩트 리포트</li></ul>
+    </div><img src="assets/research-report.jpg" alt="사회혁신가의 여정과 역량 모델링 연구 보고서 표지" loading="lazy"></div>
+  </details>
+
+  <details id="p-lotte"><summary><span class="n">04</span><span class="t">점포 전 직원이 참여한 조직문화·CSR 활동</span><span class="org">롯데백화점<span class="tag">임직원 참여</span></span></summary>
+    <div class="acc-body"><div>
+      <p class="meta">영등포점 경영지원·영업 · 2013.8~2015.4</p>
+      <h4>한 일</h4><ul><li>칭찬하기 캠페인, 비전·미션 내재화 워크숍을 직접 신규 기획해 점포 전 직원에게 확산</li><li>지역 비영리 CSR 활동 기획, 본사 CSR 보고 지원</li><li>패션·잡화 36개 브랜드 매출·프로모션 관리, 옴니채널 캠페인 기획</li></ul>
+      <h4>결과</h4><ul><li>옴니채널 캠페인이 점 내 월간 매출 성장률 1위</li></ul>
+    </div><div></div></div>
+  </details>
+
+  <details id="p-early"><summary><span class="n">05</span><span class="t">사회혁신 생태계에서 시작한 경력</span><span class="org">Ashoka · Impact Hub<span class="tag">생태계</span></span></summary>
+    <div class="acc-body"><div>
+      <h4>아쇼카 한국 · 벤처팀 연구원 (2015.10~2016.2)</h4><ul><li>사회적기업가 300명 이상과 Ashoka U 후보 기관 매핑 — 펠로우 리서치, 후보 평가, 생태계 확장 지원</li></ul>
+      <h4>Impact Hub Bay Area · 샌프란시스코 (2011.7~12)</h4><ul><li>코워킹 운영과 멤버 관리, 소셜벤처 약 30곳·학생 200명 인턴십 페어 공동 기획 (매칭률 약 60%)</li></ul>
+    </div><div></div></div>
+  </details>
+</section>
+
+<section id="method">
+  <h2>일하는 방식 <small>신규 사업을 만들 때 반복해 온 순서</small></h2>
+  <ol class="flow" style="padding:0">
+    <li><h3>현장에서 듣기</h3><p>참여자·파트너 인터뷰와 데이터로 공백을 찾음</p><small>창업가·전문가 인터뷰</small></li>
+    <li><h3>의사결정자 설득</h3><p>문제와 해법을 예산·KPI가 있는 제안으로</p><small>이사회·리더십 보고</small></li>
+    <li><h3>함께 설계</h3><p>파트너 역할, 거버넌스, 선발 기준 확정</p><small>운영위원회·자문위원회</small></li>
+    <li><h3>작게 검증</h3><p>파일럿으로 반응을 보고 바로 고침</p><small>NPS·만족도·성과 지표</small></li>
+    <li><h3>숫자와 이야기로 확산</h3><p>성과를 데이터와 스토리로 정리해 규모를 키움</p><small>정규 사업화 · 임팩트 리포트</small></li>
+  </ol>
+  <p class="loop">결과를 다음 설계에 반영 ↻</p>
+  <blockquote class="quote">지속가능성 목표는 의지가 부족해서 멈추는 일이 드물다. 글로벌 약속과 그것을 현실로 만드는 현장의 결정 사이에서 멈춘다. 그 사이를 잇는 일을 해 왔다.</blockquote>
+</section>
+
+<section id="fit">
+  <h2>역할 적합성 <small>ESG·CSR 기획 직무가 요구하는 것과 해 본 곳</small></h2>
+  <table class="stack" style="margin-top:22px"><thead><tr><th>요구 역량</th><th>해 본 곳</th><th>근거</th></tr></thead><tbody>
+    <tr><td>지속가능성 전략 실행</td><td>더나은미래 ESG 사업 전환, 아산 신규 사업 2종 설계·파일럿·확산, KAIST 녹색경영·에너지 수강</td><td>5개월 약 2억 원 · 사업 규모 2배</td></tr>
+    <tr><td>성과관리</td><td>Microsoft 파트너 8곳 KPI 체계 통일, Ramboll AI 물 인텔리전스 대시보드 설계</td><td>KPI 120% · 학습자 5,500명</td></tr>
+    <tr><td>이해관계자 관리</td><td>이사회·교수 운영위원회·동문 위원회, 연구·NGO·미디어·정책·기업 5자 모델</td><td>225개 조직 297명</td></tr>
+    <tr><td>임직원 참여·스토리텔링</td><td>Microsoft 아시아 임팩트 스토리, 재단 첫 임팩트 리포트, 롯데 전 직원 칭찬 캠페인</td><td>글로벌 스토리 4건 · 5,542 다운로드</td></tr>
+    <tr><td>공시·규제 이해</td><td>KAIST 지속가능성 회계(ISSB·KSSB·ESRS), CSRD·EU 택소노미 맥락의 물 리스크 프로젝트</td><td>ESG평가전문가 (2026)</td></tr>
+    <tr><td>한·영 로컬-글로벌 연결</td><td>LA 6인 다국적 팀 리드, Microsoft 본사-로컬 연락 창구</td><td>IELTS 8.0 · 5팀 중 1위</td></tr>
+  </tbody></table>
+</section>
+
+<section id="skills">
+  <h2>역량</h2>
+  <dl class="skills">
+    <dt>전략·기획</dt><dd>지속가능성 전략 실행, 신규 사업 발의·파일럿·정규화, 사업계획·제안서 (예산·계약 조건 포함)</dd>
+    <dt>임팩트 측정</dt><dd>KPI 설계·표준화, NPS·만족도 설계, 임팩트 리포트, 3자 공동 연구</dd>
+    <dt>이해관계자</dt><dd>이사회·위원회 운영, 집합적 임팩트 모델 설계, 기업·재단·NGO·학계·정부 파트너십</dd>
+    <dt>환경·공시</dt><dd>물 스튜어드십 (SBTN AR3T), ISSB·KSSB·ESRS, CSRD, RE100</dd>
+    <dt>데이터·도구</dt><dd>ADsP, Excel, PowerPoint, 데이터 분석·시각화, 생성형 AI (Claude Code)</dd>
+    <dt>언어</dt><dd>한국어 (모국어), 영어 (업무 수준, IELTS 8.0)</dd>
+  </dl>
+</section>
+
+<section id="career">
+  <h2>경력·학력</h2>
+  <table class="stack" style="margin-top:22px"><thead><tr><th>기간</th><th>소속</th><th>역할</th></tr></thead><tbody>
+    <tr><td>2025–2027</td><td>KAIST 경영대학 MBA (GPA 4.01/4.3)</td><td>지속가능성·에너지, 비즈니스 애널리틱스, 전략</td></tr>
+    <tr><td>2026</td><td>USC Marshall School of Business</td><td>MBA 교환, Los Angeles</td></tr>
+    <tr><td>2024–2025</td><td>더나은미래 (조선미디어그룹)</td><td>사업전략팀 팀장</td></tr>
+    <tr><td>2024</td><td>한국마이크로소프트 (Adecco Korea 파견)</td><td>Philanthropies Project Manager</td></tr>
+    <tr><td>2022–2023</td><td>약국·Dossierx (가족 사업)</td><td>사업 전환 자문</td></tr>
+    <tr><td>2016–2022</td><td>아산나눔재단</td><td>사회혁신팀 팀장 / PM</td></tr>
+    <tr><td>2015–2016</td><td>아쇼카 한국</td><td>벤처팀 연구원</td></tr>
+    <tr><td>2013–2015</td><td>롯데백화점 (롯데쇼핑)</td><td>Management Support &amp; Sales</td></tr>
+    <tr><td>2020</td><td>한양대 국제학대학원</td><td>글로벌사회적경제학 석사</td></tr>
+    <tr><td>2013</td><td>성균관대</td><td>경제학 학사</td></tr>
+  </tbody></table>
+  <p class="note">자격: ESG평가전문가 (2026) · ADsP (2025) · IELTS 8.0 · 관심사: 프리다이빙, 네팔 트레킹, 환경 워크캠프(아이슬란드·태국)</p>
+</section>
+
+<section id="contact">
+  <h2>연락처</h2>
+  <div class="contact">
+    <a href="mailto:thisismbaek@gmail.com">thisismbaek@gmail.com</a>
+    <a href="https://www.linkedin.com/in/minkyungbaek-" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Minkyung Baek · 성과 수치는 본인이 담당한 사업의 집계 기준이며, 기관의 비공개 수치는 싣지 않았습니다.</div></footer>
+
+<script>
+{
+const root=document.documentElement;
+try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
+document.getElementById('theme').addEventListener('click',()=>{
+  const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme=dark?'light':'dark';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}
+});
+
+const hints={hr:['요약과 대표 프로젝트 3건부터 보시면 됩니다. 역할 적합성 표에 직무 요건별 근거를 정리했습니다.','#featured'],
+net:['사회혁신·ESG 분야 협업이나 커피챗 환영합니다. 아래 연락처로 편하게 연락 주세요.','#contact'],
+look:['둘러보기 좋은 곳은 성과 카드와 대표 프로젝트예요. 카드를 누르면 해당 프로젝트로 이동합니다.','#impact']};
+const hint=document.getElementById('hint');
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));
+  const [txt,href]=hints[b.dataset.k];hint.innerHTML=txt+' <a href="'+href+'">이동 ↓</a>';
+}));
+
+const Y0=2013,SPAN=15,pos=(y,m)=>((y+(m-1)/12-Y0)/SPAN*100);
+const rows=[
+ ['롯데백화점','경영지원·영업 · 2013.8–2015.4',[[2013,8,2015,4]]],
+ ['아쇼카 한국','벤처팀 · 2015.10–2016.2',[[2015,10,2016,2]]],
+ ['아산나눔재단','사회혁신팀 · 2016.2–2022.3',[[2016,2,2021,1],[2021,1,2022,3,'팀장 2021–',1]]],
+ ['가족 사업','사업 전환 자문 · 2022–2023',[[2022,1,2023,12]]],
+ ['Microsoft','필란트로피 PM · 2024.2–6',[[2024,2,2024,6,'',1]]],
+ ['더나은미래','사업전략팀장 · 2024.10–2025.2',[[2024,10,2025,2,'',1]]],
+ ['KAIST MBA','2025.2–2027.2',[[2025,2,2027,2]]],
+ ['USC Marshall','MBA 교환 · 2026.1–5',[[2026,1,2026,5,'',1]]]];
+let h='<div></div><div class="tl-years">'+Array.from({length:SPAN},(_,i)=>'<span style="left:'+(i/SPAN*100)+'%">'+(Y0+i)+'</span>').join('')+'</div>';
+h+=rows.map(([n,s,bars])=>'<div class="tl-name">'+n+'<small>'+s+'</small></div><div class="tl-track">'+bars.map(([y1,m1,y2,m2,l,st])=>{const a=pos(y1,m1),b=pos(y2,m2+1);return '<div class="tl-bar'+(st?' strong':'')+'" style="left:'+a+'%;width:'+Math.max(b-a,1.2)+'%" title="'+n+' '+s+'">'+(l?'<i>'+l+'</i>':'')+'</div>'}).join('')+'</div>').join('');
+document.getElementById('tl').innerHTML=h;
+
+document.querySelectorAll('table.stack').forEach(t=>{const hs=[...t.rows[0].cells].map(c=>c.textContent);[...t.tBodies[0].rows].forEach(r=>[...r.cells].forEach((c,i)=>c.dataset.l=hs[i]||''))});
+
+const all=document.getElementById('all');
+all.addEventListener('click',()=>{const ds=[...document.querySelectorAll('#projects details')];const open=!ds.every(d=>d.open);ds.forEach(d=>d.open=open);all.textContent=open?'모두 접기':'모두 펼치기'});
+addEventListener('hashchange',()=>{const d=document.querySelector(location.hash);if(d&&d.tagName==='DETAILS')d.open=true});
+document.querySelectorAll('a[href^="#p-"]').forEach(a=>a.addEventListener('click',()=>{const d=document.querySelector(a.getAttribute('href'));if(d)d.open=true}));
+
+const links=[...document.querySelectorAll('nav a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-40% 0px -55% 0px'});
+secs.forEach(s=>s&&io.observe(s));
+}
+</script>
+</body>
+</html>
